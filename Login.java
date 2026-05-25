@@ -1,9 +1,13 @@
-package com.mycompany.login;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.message;
+
 /**
+ *
  * @author User Nkahosheko Kopa
  */
-
-import java.util.Scanner;
 
 public class Login {
     
@@ -15,81 +19,6 @@ public class Login {
     public String password;
     public String cellnumber;
    
-
-    public static void main(String[] args) 
-    {
-        Scanner scanner = new Scanner(System.in);
-        Login app = new Login();
-        
-        //The output the user will see
-        System.out.println("Welcome to the Chat App!");
-        
-        //Prompting the user for their personal details such as name and surname in order to make use of at the welcome message.
-        System.out.println("\nEnter your name:");
-        app.name = scanner.next();
-        
-        System.out.println("\nEnter your surname:");
-        app.surname = scanner.next();
-        
-        /** User registration will display 
-         * Giving users a set of instructions to follow in order to have a successful registration.
-         * Prompting the user for username, password and cell number input.
-        */
-        
-        System.out.println("\nUSER REGISTRATION");
-        System.out.println("You have to create an account and by that you have to adhere to the instructions/conditions precisely");
-        
-        System.out.println("\nConsider the following conditions to form a username:\n - Username must contain five (5) characters only  \n - Username must contain an underscore(_) ");
-        
-        //This part is where the user inputs their username.
-        System.out.println("Enter prefered username:");
-        app.username = scanner.next();
-        
-        System.out.println("\nConsider the following conditions to form a password:\n - Password must contain eight (8) characters \n - Password must contain one (1) capital letter \n - Password must contain one (1) number \n - Password must contain one (1) special character [*,&,^,%,$,#,@,!] etc.");
-        
-        //This part is where the user inputs their password.
-        System.out.println("Enter prefered password:");  
-        app.password = scanner.next();
-        
-        System.out.println("\nConsider the following conditions when entering cellphone number:\n - Cellphone number must start with +27 \n - Cellphone number must be a valid length digit");
-        
-        ////This part is where the user inputs their cell number.
-        System.out.println("Enter cellphone number:");   
-        app.cellnumber = scanner.next();
-        
-        // I then call the registration method to display result.
-        String result = app.registerUser();
-        System.out.println("\n" + result);
-
-        
-        // The program should stop if registration fails.
-        if (!result.contains("Registration successful.")) 
-        {
-            return;
-        }
-
-        /** Chatapp login will display once the registration still runs.
-         * The username and password are saved or stored, I think so. to verify I will have to request the user to enter their username and password again. 
-         * Then display the login results for the user to either receive their welcome message or otherwise. 
-         */
-         
-        System.out.println("\nCHATAPP LOGIN ");
-        
-        // User enters login username.
-        System.out.print("\nUsername: ");
-        String inputUsername = scanner.next();
-
-        // User enters login pasword.
-        System.out.print("\nPassword: ");
-        String inputPassword = scanner.next();
-
-        // Display the login outcome.
-        System.out.println(app.returnLoginStatus( inputUsername, inputPassword));
-
-        // Always close the scanner once done.
-        scanner.close();
-        
-    }
     
     public boolean checkUserName()
     {  
@@ -217,10 +146,4 @@ public class Login {
         }
         return "Username or password is incorrect, please try again.";
     }
-    
-    /**
-     * Overall my program validates all inputs before allowing the user to login.
-     * I separated stored data from the user's input for clarity and to under my code a lot more better.
-     * I used methods to enforce modular design   
-    */
 }
